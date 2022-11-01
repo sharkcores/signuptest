@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <style>
+        body{
+            height: 100vh;
+            font-family: sans-serif;
+        }
+        #main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #login{
+            box-shadow: 0px 0px 5px black;
+            border-radius: 5px;
+            height: 420px;
+            width: 310px;
+            margin-top: 7%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+        h2{
+            margin-bottom: 67px;
+        }
+        #Username, #Password{
+            background-color: rgb(224, 224, 224);
+            text-align: center;
+            height: 25px;
+            border-style: solid;
+            border-color: black;
+            border-top-width: 0px;
+            border-left-width: 0px;
+            border-right-width: 0px;
+            border-bottom-width: 1.5px;
+            outline: none;
+            margin-bottom: 25px;
+            width: 240px;
+            height: 31px;
+            font-weight: 400;
+        }
+        #Signup{
+            border-radius: 10px;
+            width: 150px;
+            height: 35px;
+            border-style: solid;
+            border-width: 1.5px; 
+            font-weight: bold;
+        }
+        #Signup:hover{
+            border-color: orangered;
+            color: orangered;
+        }
+        #policy{
+            width: 17px;
+            height: 16px;
+            background-color: transparent;
+            border-radius: 0;
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            margin-top: -14px;
+            display: inline-block;
+            margin-left: -269px;
+        }
+        #policyaccept{
+            margin-top: -16px;
+            font-size: 13px;
+        }
+        #boldtext{
+            font-weight: bold;
+            color:rgb(10, 172, 172);
+        }
+        #hint, #hint1{
+            color: transparent;
+            font-size: 13px;
+            margin-top: -20px;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        #wow{
+            font-weight: bolder;
+            color: transparent;
+        }
+    </style>
+    <div id="main">
+        <div id="login">
+            <h2>Sign Up</h2>
+            <input id="Username" type="text" placeholder="Username">
+            <p id="hint1">The username field can't be empty!</p>
+            <input id="Password" type="password" placeholder="Password">
+            <p id="hint">The password field can't be empty!</p>
+            <button id="policy"></button>
+            <p id="policyaccept">by clicking you accept our <span id="boldtext">privacy policy</span></p>
+            <button id="Signup" disabled>Sign Up</button>
+        </div>
+        <p id="wow"></p>
+    </div>
+    <script>
+        var policy = document.getElementById("policy")
+        var signup = document.getElementById("Signup")
+        var pass = document.getElementById("Password")
+        var hint = document.getElementById("hint")
+        var user =  document.getElementById("Username")
+        var hint1 =  document.getElementById("hint1")
+        policy.onclick = function(){
+            if(policy.style.backgroundColor="transparent"){
+                policy.style.backgroundColor="green"
+                document.getElementById("Signup").disabled = false;
+            }
+        }
+        signup.onclick = function(){
+            if(user.value.length <6){
+           hint1.style.color="red"
+            hint1.innerHTML="Name contains less than 6 characters"
+            setTimeout(function() {
+                hint1.style.color="transparent"
+            }, 2000);
+        }
+    
+        if(pass.value.length <8){
+            hint.style.color="red"
+            hint.innerHTML="Password contains less than 8 characters"
+            setTimeout(function() {
+                hint.style.color="transparent"
+            }, 2000);
+        }
+        else(
+            document.getElementById("login").style.marginTop="-1100px",
+            document.getElementById("wow").style.color="black",
+            document.getElementById("wow").style.marginTop="850px",
+            document.getElementById("wow").innerHTML="Congrats you signed up you absolute fuck  now give me 500 pushups"
+        )
+    }
+    </script>
+</body>
+</html>
